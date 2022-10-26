@@ -58,7 +58,7 @@ quadruple x = 2*(double x)
 --   distance 1 1 4 5  ==>  5.0
 
 distance :: Double -> Double -> Double -> Double -> Double
-distance x1 y1 x2 y2 = sqrt ((x1-y1)^2 + (x2-y2)^2)
+distance x1 y1 x2 y2 = sqrt ((x2 - x1)^2 + (y2 - y1)^2)
 
 ------------------------------------------------------------------------------
 -- Ex 5: define the function eeny that returns "eeny" for even inputs
@@ -91,7 +91,7 @@ checkPassword password = if password == "swordfish" || password == "mellon"
 postagePrice :: Int -> Int
 postagePrice n
     | n <= 500 = 250
-    | n < 5000 = 300 + n
+    | n <= 5000 = 300 + n
     | otherwise = 6000
 
 ------------------------------------------------------------------------------
